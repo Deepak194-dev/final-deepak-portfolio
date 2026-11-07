@@ -1,0 +1,143 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #080808;
+    --bg-secondary: #121214;
+    --bg-charcoal: #171717;
+    --accent-burgundy: #5C071B;
+    --accent-red: #A4162A;
+    --accent-gold: #C6A15B;
+    --accent-gold-light: #F0CF85;
+    --accent-gold-dark: #8D6B2C;
+    --text-primary: #FFFFFF;
+    --text-smoke: #E5E5E5;
+    --text-muted: #A3A3A3;
+  }
+
+  body {
+    background-color: #080808;
+    color: #E5E5E5;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom luxury scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080808;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #A4162A, #C6A15B);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #C6A15B;
+  }
+}
+
+/* Custom Typography Helpers */
+.font-cinzel {
+  font-family: 'Cinzel', Georgia, serif;
+}
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Luxury Metallic Gold Gradients */
+.gold-gradient-text {
+  background: linear-gradient(135deg, #FFF0D0 0%, #F0CF85 25%, #C6A15B 60%, #8D6B2C 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gold-gradient-shimmer {
+  background: linear-gradient(90deg, #C6A15B 0%, #FFFFFF 50%, #C6A15B 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 4s linear infinite;
+}
+
+.red-gradient-text {
+  background: linear-gradient(135deg, #FFFFFF 0%, #FF6B81 30%, #A4162A 70%, #5C071B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Dark Glassmorphism */
+.mafia-glass {
+  background: rgba(18, 18, 20, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(198, 161, 91, 0.12);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
+}
+
+.mafia-glass-card {
+  background: linear-gradient(135deg, rgba(23, 23, 27, 0.8) 0%, rgba(13, 13, 16, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(198, 161, 91, 0.15);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 25px -5px rgba(164, 22, 42, 0.15);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.mafia-glass-card:hover {
+  border-color: rgba(198, 161, 91, 0.4);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.9), 0 0 40px -5px rgba(164, 22, 42, 0.3), 0 0 20px 0 rgba(198, 161, 91, 0.2);
+}
+
+/* Cinematic Glows */
+.glow-burgundy {
+  box-shadow: 0 0 35px -5px rgba(92, 7, 27, 0.5);
+}
+
+.glow-red {
+  box-shadow: 0 0 40px -5px rgba(164, 22, 42, 0.6);
+}
+
+.glow-gold {
+  box-shadow: 0 0 35px -5px rgba(198, 161, 91, 0.4);
+}
+
+/* Animated Shimmer */
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* 3D Transform Utilities */
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+.perspective-1000 {
+  perspective: 1000px;
+}
+.perspective-2000 {
+  perspective: 2000px;
+}
+
+/* Noise overlay */
+.bg-noise {
+  background-image: radial-gradient(rgba(198, 161, 91, 0.04) 1px, transparent 0);
+  background-size: 24px 24px;
+}

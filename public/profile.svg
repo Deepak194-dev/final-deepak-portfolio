@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <radialGradient id="smokeBg" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1A0A0F" stop-opacity="0.8" />
+      <stop offset="40%" stop-color="#120508" stop-opacity="0.9" />
+      <stop offset="80%" stop-color="#080808" stop-opacity="1" />
+      <stop offset="100%" stop-color="#080808" stop-opacity="1" />
+    </radialGradient>
+
+    <linearGradient id="redRim" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF1A3C" stop-opacity="0.9" />
+      <stop offset="40%" stop-color="#A4162A" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#5C071B" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="goldRim" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FFF0D0" stop-opacity="0.9" />
+      <stop offset="30%" stop-color="#C6A15B" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#8D6B2C" stop-opacity="0" />
+    </linearGradient>
+
+    <linearGradient id="goldLine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0CF85" />
+      <stop offset="50%" stop-color="#C6A15B" />
+      <stop offset="100%" stop-color="#8D6B2C" />
+    </linearGradient>
+
+    <filter id="cinematicGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="15" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background Canvas -->
+  <rect width="800" height="1000" fill="#080808" />
+  <rect width="800" height="1000" fill="url(#smokeBg)" />
+
+  <!-- Atmospheric Background Orbs -->
+  <circle cx="250" cy="350" r="280" fill="#A4162A" opacity="0.12" filter="url(#cinematicGlow)" />
+  <circle cx="580" cy="450" r="220" fill="#C6A15B" opacity="0.08" filter="url(#cinematicGlow)" />
+
+  <!-- Cinematic Portrait Silhouette Composition -->
+  <g id="portrait-silhouette">
+    <!-- Torso / Luxury Suit Coat Silhouette -->
+    <path d="M 180,980 L 190,750 Q 230,680 320,630 L 400,690 L 480,630 Q 570,680 610,750 L 620,980 Z" fill="#0F1014" stroke="#1D1E24" stroke-width="2" />
+    
+    <!-- Lapel Left (Blood Red Rim Reflection) -->
+    <path d="M 320,630 L 370,760 L 400,690 Z" fill="#14080B" stroke="#A4162A" stroke-width="1.5" />
+    <!-- Lapel Right (Antique Gold Rim Reflection) -->
+    <path d="M 480,630 L 430,760 L 400,690 Z" fill="#13100B" stroke="#C6A15B" stroke-width="1.5" />
+
+    <!-- Shirt & Tie Silhouette -->
+    <polygon points="380,680 420,680 410,850 400,890 390,850" fill="#080808" stroke="#333" stroke-width="1" />
+    <polygon points="392,685 408,685 404,780 400,820 396,780" fill="#5C071B" />
+
+    <!-- Neck -->
+    <path d="M 360,540 L 360,650 Q 400,680 440,650 L 440,540 Z" fill="#161517" />
+    <path d="M 360,540 L 360,650 Q 380,665 400,660 Z" fill="url(#redRim)" opacity="0.6" />
+    <path d="M 440,540 L 440,650 Q 420,665 400,660 Z" fill="url(#goldRim)" opacity="0.5" />
+
+    <!-- Head / Jaw Silhouette -->
+    <path d="M 320,400 Q 315,500 370,555 Q 400,575 430,555 Q 485,500 480,400 Q 480,260 400,260 Q 320,260 320,400 Z" fill="#141416" />
+
+    <!-- Red Rim Lighting (Left Cheek & Temple) -->
+    <path d="M 320,400 Q 315,500 370,555 L 360,550 Q 325,490 328,400 Q 330,310 370,280 L 365,270 Q 320,290 320,400 Z" fill="#FF1A3C" opacity="0.85" filter="url(#cinematicGlow)" />
+
+    <!-- Gold Rim Lighting (Right Cheek & Hairline) -->
+    <path d="M 480,400 Q 485,500 430,555 L 440,550 Q 475,490 472,400 Q 470,310 430,280 L 435,270 Q 480,290 480,400 Z" fill="#F0CF85" opacity="0.85" filter="url(#cinematicGlow)" />
+
+    <!-- Hair Silhouette -->
+    <path d="M 315,360 Q 310,260 370,230 Q 420,210 460,235 Q 485,260 485,350 Q 470,300 440,285 Q 390,270 340,310 Z" fill="#0A0A0C" />
+    <!-- Hair Gold Highlights -->
+    <path d="M 420,225 Q 455,235 480,270 Q 460,250 430,240 Z" fill="url(#goldLine)" opacity="0.8" />
+
+    <!-- Stylish Noir Eyeglasses with subtle Gold rim reflection -->
+    <rect x="345" y="380" width="46" height="28" rx="6" fill="none" stroke="#C6A15B" stroke-width="2.5" opacity="0.85" />
+    <rect x="409" y="380" width="46" height="28" rx="6" fill="none" stroke="#C6A15B" stroke-width="2.5" opacity="0.85" />
+    <line x1="391" y1="392" x2="409" y2="392" stroke="#C6A15B" stroke-width="2" />
+    <!-- Glasses Lens Glare -->
+    <line x1="355" y1="384" x2="380" y2="404" stroke="#FFF" stroke-width="1.5" opacity="0.5" />
+    <line x1="419" y1="384" x2="444" y2="404" stroke="#FF6B81" stroke-width="1.5" opacity="0.5" />
+
+    <!-- Subtle Facial Features / Beard Contour -->
+    <path d="M 380,470 Q 400,480 420,470" stroke="#252528" stroke-width="2" fill="none" />
+    <path d="M 370,510 Q 400,535 430,510" stroke="#A4162A" stroke-width="1" fill="none" opacity="0.5" />
+    <path d="M 385,445 L 400,442 L 402,448" stroke="#333338" stroke-width="1.5" fill="none" />
+  </g>
+
+  <!-- Foreground Vignette and Depth Gradient -->
+  <linearGradient id="bottomFade" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="60%" stop-color="#080808" stop-opacity="0" />
+    <stop offset="95%" stop-color="#080808" stop-opacity="0.95" />
+    <stop offset="100%" stop-color="#080808" stop-opacity="1" />
+  </linearGradient>
+  <rect width="800" height="1000" fill="url(#bottomFade)" />
+
+  <!-- Decorative Gold Tech Overlays -->
+  <g opacity="0.3">
+    <circle cx="400" cy="450" r="320" fill="none" stroke="#C6A15B" stroke-dasharray="4,8" stroke-width="1" />
+    <circle cx="400" cy="450" r="360" fill="none" stroke="#A4162A" stroke-dasharray="2,12" stroke-width="1" />
+  </g>
+</svg>
