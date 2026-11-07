@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <defs>
+    <!-- Background Radial Glow -->
+    <radialGradient id="bgGlow" cx="50%" cy="35%" r="65%">
+      <stop offset="0%" stop-color="#3A0E18" stop-opacity="0.9" />
+      <stop offset="45%" stop-color="#1A070B" stop-opacity="0.95" />
+      <stop offset="85%" stop-color="#080808" stop-opacity="1" />
+    </radialGradient>
+
+    <!-- Crimson Rim Light Gradient -->
+    <linearGradient id="crimsonGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF2A4B" />
+      <stop offset="35%" stop-color="#A4162A" />
+      <stop offset="100%" stop-color="#5C071B" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Antique Gold Rim Light Gradient -->
+    <linearGradient id="goldGlow" x1="100%" y1="0%" x2="0%" y2="0%">
+      <stop offset="0%" stop-color="#FFF0D0" />
+      <stop offset="40%" stop-color="#C6A15B" />
+      <stop offset="100%" stop-color="#8D6B2C" stop-opacity="0" />
+    </linearGradient>
+
+    <!-- Face Skin Tone Gradient with Split Lighting -->
+    <linearGradient id="faceGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9E4646" />
+      <stop offset="25%" stop-color="#D49B82" />
+      <stop offset="60%" stop-color="#E2B198" />
+      <stop offset="85%" stop-color="#DFB475" />
+      <stop offset="100%" stop-color="#FCEFD2" />
+    </linearGradient>
+
+    <!-- Hair Gradient -->
+    <linearGradient id="hairGrad" x1="0%" y1="0%" x2="100%" y2="50%">
+      <stop offset="0%" stop-color="#1E0A10" />
+      <stop offset="40%" stop-color="#121215" />
+      <stop offset="70%" stop-color="#241E15" />
+      <stop offset="100%" stop-color="#C6A15B" />
+    </linearGradient>
+
+    <!-- Suit Coat Gradient -->
+    <linearGradient id="suitGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A0D12" />
+      <stop offset="50%" stop-color="#15151A" />
+      <stop offset="100%" stop-color="#1E1912" />
+    </linearGradient>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="800" height="1000" fill="#080808" />
+  <rect width="800" height="1000" fill="url(#bgGlow)" />
+
+  <!-- Atmospheric Glow Spheres -->
+  <circle cx="200" cy="360" r="240" fill="#A4162A" opacity="0.25" filter="url(#softGlow)" />
+  <circle cx="600" cy="380" r="220" fill="#C6A15B" opacity="0.2" filter="url(#softGlow)" />
+
+  <!-- Torso & Suit -->
+  <g id="suit-body">
+    <!-- Main Jacket -->
+    <path d="M 160,1000 L 180,720 Q 240,640 330,600 L 400,680 L 470,600 Q 560,640 620,720 L 640,1000 Z" fill="url(#suitGrad)" stroke="#26262F" stroke-width="2" />
+    
+    <!-- Left Crimson Rim Lighting on Shoulder -->
+    <path d="M 160,1000 L 180,720 Q 240,640 330,600 L 320,630 Q 235,670 190,740 L 175,1000 Z" fill="#FF2A4B" opacity="0.8" filter="url(#softGlow)" />
+    
+    <!-- Right Antique Gold Rim Lighting on Shoulder -->
+    <path d="M 640,1000 L 620,720 Q 560,640 470,600 L 480,630 Q 565,670 610,740 L 625,1000 Z" fill="#F0CF85" opacity="0.85" filter="url(#softGlow)" />
+
+    <!-- Left Lapel with Crimson Accent -->
+    <polygon points="330,600 380,780 400,690" fill="#1C0A0F" stroke="#A4162A" stroke-width="2" />
+    <!-- Right Lapel with Gold Accent -->
+    <polygon points="470,600 420,780 400,690" fill="#1A150A" stroke="#C6A15B" stroke-width="2" />
+
+    <!-- Inner Shirt & Gold Tie -->
+    <polygon points="375,690 425,690 410,920 400,970 390,920" fill="#F4F4F6" />
+    <!-- Gold Metallic Necktie -->
+    <polygon points="392,695 408,695 405,860 400,910 395,860" fill="url(#goldGlow)" stroke="#C6A15B" stroke-width="1.5" />
+    <!-- Gold Tie Clip -->
+    <line x1="390" y1="765" x2="410" y2="765" stroke="#FFFFFF" stroke-width="3" />
+  </g>
+
+  <!-- Neck -->
+  <path d="M 355,510 L 355,640 Q 400,670 445,640 L 445,510 Z" fill="#C2876E" />
+  <path d="M 355,510 L 355,640 Q 380,660 395,655 Z" fill="#A4162A" opacity="0.6" />
+  <path d="M 445,510 L 445,640 Q 420,660 405,655 Z" fill="#F0CF85" opacity="0.5" />
+
+  <!-- Head / Face -->
+  <g id="head">
+    <!-- Jaw and Face Oval with Split Radiance -->
+    <path d="M 315,370 Q 310,480 365,540 Q 400,565 435,540 Q 490,480 485,370 Q 485,240 400,240 Q 315,240 315,370 Z" fill="url(#faceGrad)" />
+
+    <!-- Left Cheek Shadow / Crimson Rim -->
+    <path d="M 315,370 Q 310,480 365,540 L 355,530 Q 318,470 322,370 Z" fill="#FF1A3C" opacity="0.9" filter="url(#softGlow)" />
+
+    <!-- Right Temple / Gold Rim Radiance -->
+    <path d="M 485,370 Q 490,480 435,540 L 445,530 Q 482,470 478,370 Z" fill="#FFF0D0" opacity="0.95" filter="url(#softGlow)" />
+
+    <!-- Sharp Modern Hair -->
+    <path d="M 310,330 Q 300,220 370,185 Q 430,165 475,195 Q 500,225 495,325 Q 475,265 435,250 Q 375,235 325,285 Z" fill="url(#hairGrad)" />
+    <!-- Hair Gold Highlight Strands -->
+    <path d="M 420,180 Q 460,195 485,240 Q 465,215 430,200 Z" fill="#FFF0D0" opacity="0.9" />
+
+    <!-- Sleek Designer Eyeglasses with Gold Metallic Finish -->
+    <g id="glasses">
+      <!-- Left Lens Frame -->
+      <rect x="335" y="350" width="56" height="38" rx="8" fill="rgba(20,20,25,0.4)" stroke="#C6A15B" stroke-width="3" />
+      <!-- Right Lens Frame -->
+      <rect x="409" y="350" width="56" height="38" rx="8" fill="rgba(20,20,25,0.4)" stroke="#C6A15B" stroke-width="3" />
+      <!-- Bridge -->
+      <line x1="391" y1="365" x2="409" y2="365" stroke="#F0CF85" stroke-width="3" />
+      <!-- Left Temple Arm -->
+      <line x1="335" y1="365" x2="315" y2="360" stroke="#C6A15B" stroke-width="2.5" />
+      <!-- Right Temple Arm -->
+      <line x1="465" y1="365" x2="485" y2="360" stroke="#F0CF85" stroke-width="2.5" />
+      <!-- Lens Reflections -->
+      <line x1="345" y1="356" x2="375" y2="382" stroke="#FFFFFF" stroke-width="2" opacity="0.75" />
+      <line x1="420" y1="356" x2="450" y2="382" stroke="#FFF0D0" stroke-width="2" opacity="0.75" />
+    </g>
+
+    <!-- Eyes (Focused Expression) -->
+    <ellipse cx="363" cy="369" rx="7" ry="5" fill="#1A1A1A" />
+    <circle cx="365" cy="368" r="2.5" fill="#FFF" />
+    <ellipse cx="437" cy="369" rx="7" ry="5" fill="#1A1A1A" />
+    <circle cx="439" cy="368" r="2.5" fill="#FFF" />
+
+    <!-- Eyebrows -->
+    <path d="M 335,342 Q 365,335 385,344" stroke="#1A0D10" stroke-width="3.5" stroke-linecap="round" fill="none" />
+    <path d="M 415,344 Q 435,335 465,342" stroke="#241E15" stroke-width="3.5" stroke-linecap="round" fill="none" />
+
+    <!-- Nose Contour -->
+    <path d="M 400,365 L 402,425 L 393,435 L 407,435" stroke="#A86B52" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+
+    <!-- Well-Groomed Beard & Smile Contour -->
+    <path d="M 375,470 Q 400,480 425,470" stroke="#7A3D28" stroke-width="2" fill="none" />
+    <path d="M 345,450 Q 365,520 400,535 Q 435,520 455,450" stroke="#2A1B16" stroke-width="2.5" stroke-dasharray="2,3" fill="none" opacity="0.6" />
+  </g>
+
+  <!-- Tech Geometric Aesthetic Overlay -->
+  <g opacity="0.35">
+    <circle cx="400" cy="420" r="300" fill="none" stroke="#C6A15B" stroke-dasharray="4,8" stroke-width="1.5" />
+    <circle cx="400" cy="420" r="340" fill="none" stroke="#A4162A" stroke-dasharray="3,12" stroke-width="1.5" />
+    <line x1="80" y1="420" x2="140" y2="420" stroke="#C6A15B" stroke-width="2" />
+    <line x1="660" y1="420" x2="720" y2="420" stroke="#C6A15B" stroke-width="2" />
+  </g>
+
+  <!-- Name Monogram Stamp -->
+  <g transform="translate(620, 890)">
+    <rect x="-10" y="-18" width="80" height="28" rx="6" fill="#14141A" stroke="#C6A15B" stroke-width="1.5" opacity="0.9" />
+    <text x="30" y="2" font-family="'Cinzel', serif" font-size="14" font-weight="bold" fill="#F0CF85" text-anchor="middle" letter-spacing="2">DAM</text>
+  </g>
+</svg>

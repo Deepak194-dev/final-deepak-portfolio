@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDown, Code2, Sparkles, Terminal, ChevronRight } from 'lucide-react';
+import { ChevronRight, Sparkles } from 'lucide-react';
 import ProfilePortrait from './ProfilePortrait';
 import { soundManager } from '../utils/audio';
 
@@ -22,14 +22,14 @@ export default function HeroSection({ photoUrl, onOpenUploadModal }) {
     window.addEventListener('resize', resize);
 
     // Smoke particles
-    const smokes = Array.from({ length: 35 }, () => ({
+    const smokes = Array.from({ length: 30 }, () => ({
       x: Math.random() * canvas.width,
-      y: canvas.height + Math.random() * 100,
-      radius: Math.random() * 90 + 50,
+      y: canvas.height + Math.random() * 80,
+      radius: Math.random() * 80 + 40,
       vx: (Math.random() - 0.5) * 0.4,
-      vy: -(Math.random() * 0.6 + 0.3),
-      alpha: Math.random() * 0.05 + 0.02,
-      hue: Math.random() > 0.6 ? 350 : 40, // red vs warm amber
+      vy: -(Math.random() * 0.5 + 0.3),
+      alpha: Math.random() * 0.04 + 0.02,
+      hue: Math.random() > 0.6 ? 350 : 40,
     }));
 
     const renderSmoke = () => {
@@ -38,12 +38,12 @@ export default function HeroSection({ photoUrl, onOpenUploadModal }) {
       smokes.forEach((p) => {
         p.x += p.vx;
         p.y += p.vy;
-        p.radius += 0.15;
+        p.radius += 0.12;
 
         if (p.y + p.radius < 0) {
           p.y = canvas.height + p.radius;
           p.x = Math.random() * canvas.width;
-          p.radius = Math.random() * 80 + 40;
+          p.radius = Math.random() * 70 + 35;
         }
 
         const gradient = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, p.radius);
@@ -87,7 +87,7 @@ export default function HeroSection({ photoUrl, onOpenUploadModal }) {
       {/* Background Atmospheric Smoke Canvas */}
       <canvas
         ref={smokeCanvasRef}
-        className="absolute inset-0 pointer-events-none z-0 opacity-80"
+        className="absolute inset-0 pointer-events-none z-0 opacity-70"
       />
 
       {/* Volumetric Radial Glows */}
@@ -100,12 +100,12 @@ export default function HeroSection({ photoUrl, onOpenUploadModal }) {
         <div className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left order-2 lg:order-1">
           {/* Eyebrow Label */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
+            transition={{ duration: 0.6 }}
             className="inline-flex items-center justify-center lg:justify-start gap-2 mb-4"
           >
-            <div className="px-3.5 py-1.5 rounded-full bg-[#17171C]/80 border border-[#C6A15B]/40 backdrop-blur-md flex items-center gap-2 shadow-[0_0_15px_rgba(198,161,91,0.15)]">
+            <div className="px-3.5 py-1.5 rounded-full bg-[#17171C]/90 border border-[#C6A15B]/40 backdrop-blur-md flex items-center gap-2 shadow-[0_0_15px_rgba(198,161,91,0.2)]">
               <span className="w-2 h-2 rounded-full bg-[#A4162A] shadow-[0_0_8px_#A4162A]" />
               <span className="font-cinzel text-xs font-bold tracking-[0.25em] text-[#F0CF85] uppercase">
                 HELLO, I'M
@@ -113,15 +113,15 @@ export default function HeroSection({ photoUrl, onOpenUploadModal }) {
             </div>
           </motion.div>
 
-          {/* Main Name Heading with Metallic Gold Sweep */}
+          {/* Main Name Heading with Solid Fallback + Metallic Sweep */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 1, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
             className="mb-4"
           >
             <h1 className="font-cinzel text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none uppercase">
-              <span className="gold-gradient-text block drop-shadow-2xl">
+              <span className="gold-gradient-text block drop-shadow-2xl text-[#F0CF85]">
                 DEEPAK
               </span>
               <span className="text-[#FFFFFF] block tracking-wider drop-shadow-md">
@@ -132,40 +132,39 @@ export default function HeroSection({ photoUrl, onOpenUploadModal }) {
 
           {/* Subtitles / Badges */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="flex flex-wrap items-center justify-center lg:justify-start gap-3 mb-6"
           >
-            <span className="px-3.5 py-1.5 rounded-lg bg-[#5C071B]/30 border border-[#A4162A]/50 font-cinzel text-xs sm:text-sm font-bold tracking-wider text-[#FFB4C0] uppercase">
+            <span className="px-3.5 py-1.5 rounded-lg bg-[#5C071B]/40 border border-[#A4162A]/60 font-cinzel text-xs sm:text-sm font-bold tracking-wider text-[#FFB4C0] uppercase shadow-sm">
               MERN STACK DEVELOPER
             </span>
             <span className="text-[#C6A15B] hidden sm:inline">&bull;</span>
-            <span className="px-3.5 py-1.5 rounded-lg bg-[#141418] border border-[#C6A15B]/30 font-cinzel text-xs sm:text-sm font-semibold tracking-wider text-[#E5E5E5] uppercase">
+            <span className="px-3.5 py-1.5 rounded-lg bg-[#141418] border border-[#C6A15B]/40 font-cinzel text-xs sm:text-sm font-semibold tracking-wider text-[#F0CF85] uppercase">
               BCA STUDENT
             </span>
             <span className="text-[#C6A15B] hidden sm:inline">&bull;</span>
-            <span className="px-3.5 py-1.5 rounded-lg bg-[#141418] border border-[#333] font-cinzel text-xs sm:text-sm font-semibold tracking-wider text-[#A3A3A3] uppercase">
+            <span className="px-3.5 py-1.5 rounded-lg bg-[#141418] border border-[#333] font-cinzel text-xs sm:text-sm font-semibold tracking-wider text-[#E5E5E5] uppercase">
               CREATIVE DEVELOPER
             </span>
           </motion.div>
 
           {/* Tagline */}
           <motion.p
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="font-serif text-lg sm:text-xl md:text-2xl text-[#E5E5E5]/90 max-w-xl mx-auto lg:mx-0 font-normal italic tracking-wide mb-8 border-l-0 lg:border-l-2 border-[#A4162A] lg:pl-4"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="font-serif text-lg sm:text-xl md:text-2xl text-[#E5E5E5] max-w-xl mx-auto lg:mx-0 font-normal italic tracking-wide mb-8 border-l-0 lg:border-l-2 border-[#A4162A] lg:pl-4"
           >
             &ldquo;Turning Ideas Into Interactive Digital Experiences.&rdquo;
           </motion.p>
 
           {/* Interactive Code Snippet Card */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="mb-8 hidden sm:block max-w-lg mx-auto lg:mx-0 p-3.5 rounded-xl bg-[#0D0D10]/80 border border-[#222228] font-mono-code text-xs text-[#A3A3A3] shadow-inner"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
+            className="mb-8 hidden sm:block max-w-lg mx-auto lg:mx-0 p-3.5 rounded-xl bg-[#0D0D10]/90 border border-[#2B2B33] font-mono-code text-xs text-[#CCCCCC] shadow-inner"
           >
             <div className="flex items-center justify-between pb-2 mb-2 border-b border-[#1A1A20]">
               <div className="flex items-center gap-1.5">
@@ -173,7 +172,7 @@ export default function HeroSection({ photoUrl, onOpenUploadModal }) {
                 <span className="w-2.5 h-2.5 rounded-full bg-[#C6A15B]" />
                 <span className="w-2.5 h-2.5 rounded-full bg-[#333]" />
               </div>
-              <span className="text-[10px] text-[#737373]">architect.config.js</span>
+              <span className="text-[10px] text-[#A3A3A3]">architect.config.js</span>
             </div>
             <p>
               <span className="text-[#C6A15B]">const</span> developer = &#123;
@@ -185,18 +184,13 @@ export default function HeroSection({ photoUrl, onOpenUploadModal }) {
               focus: <span className="text-[#86efac]">'Scalable Full-Stack & 3D Interactive Systems'</span>,
             </p>
             <p className="pl-4">
-              status: <span className="text-[#FF6B81]">'Ready to engineer excellence'</span>
+              status: <span className="text-[#FF8596]">'Ready to engineer excellence'</span>
             </p>
             <p>&#125;;</p>
           </motion.div>
 
           {/* Action CTAs: Two Cinematic Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
-          >
+          <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
             {/* Button 1: EXPLORE MY WORK */}
             <button
               onClick={() => scrollTo('projects')}
@@ -216,30 +210,22 @@ export default function HeroSection({ photoUrl, onOpenUploadModal }) {
               <Sparkles size={14} className="text-[#A4162A] group-hover:scale-125 transition-transform" />
               <span>CONTACT ME</span>
             </button>
-          </motion.div>
+          </div>
         </div>
 
         {/* Right Column: 3D Layered Cinematic Portrait Centerpiece */}
         <div className="lg:col-span-5 flex justify-center items-center order-1 lg:order-2">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.88 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full max-w-md flex justify-center"
-          >
+          <div className="w-full max-w-md flex justify-center">
             <ProfilePortrait
               photoUrl={photoUrl}
               onOpenUploadModal={onOpenUploadModal}
             />
-          </motion.div>
+          </div>
         </div>
       </div>
 
       {/* Scroll-Down Cinematic Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1 }}
+      <div
         onClick={() => scrollTo('about')}
         className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer group"
       >
@@ -253,7 +239,7 @@ export default function HeroSection({ photoUrl, onOpenUploadModal }) {
             className="w-1 h-2 rounded-full bg-gradient-to-b from-[#A4162A] to-[#C6A15B]"
           />
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }

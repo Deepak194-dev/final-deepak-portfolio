@@ -48,7 +48,7 @@ export default function ProjectsSection() {
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-20">
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 1, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#141418] border border-[#C6A15B]/30 mb-3"
@@ -60,25 +60,19 @@ export default function ProjectsSection() {
           </motion.div>
 
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="font-cinzel text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight uppercase"
           >
-            <span className="gold-gradient-text">MY </span>
+            <span className="gold-gradient-text text-[#F0CF85]">MY </span>
             <span className="text-[#FFFFFF]">CREATIONS</span>
           </motion.h2>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-sm sm:text-base text-[#A3A3A3] max-w-xl mx-auto mt-3"
-          >
+          <p className="text-sm sm:text-base text-[#A3A3A3] max-w-xl mx-auto mt-3">
             Cinematic, full-stack software architectures engineered with high efficiency, robust logic, and interactive user experiences.
-          </motion.p>
+          </p>
 
           <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-[#C6A15B] to-transparent mx-auto mt-4" />
         </div>
@@ -87,10 +81,9 @@ export default function ProjectsSection() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* PROJECT 01: STUDENT MANAGEMENT SYSTEM */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7 }}
             onMouseEnter={() => soundManager.playHover()}
             className="group relative rounded-2xl mafia-glass-card border border-[#C6A15B]/20 hover:border-[#C6A15B]/50 transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-2xl hover:-translate-y-2"
           >
@@ -190,10 +183,9 @@ export default function ProjectsSection() {
 
           {/* PROJECT 02: BIRTHDAY CELEBRATION WEBSITE */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.15 }}
             onMouseEnter={() => soundManager.playHover()}
             className="group relative rounded-2xl mafia-glass-card border border-[#C6A15B]/20 hover:border-[#A4162A]/60 transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-2xl hover:-translate-y-2"
           >
@@ -289,10 +281,9 @@ export default function ProjectsSection() {
 
           {/* PROJECT 03: COMING SOON (PREMIUM PLACEHOLDER) */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.7, delay: 0.3 }}
             onMouseEnter={() => soundManager.playHover()}
             className="group relative rounded-2xl mafia-glass-card border border-[#C6A15B]/15 hover:border-[#C6A15B]/40 transition-all duration-500 flex flex-col justify-between overflow-hidden shadow-2xl hover:-translate-y-2 opacity-95"
           >

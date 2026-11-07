@@ -54,7 +54,7 @@ export default function AboutSection({ photoUrl, onOpenUploadModal }) {
         {/* Section Header */}
         <div className="text-center mb-16 md:mb-24">
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 1, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#141418] border border-[#C6A15B]/30 mb-3"
@@ -66,13 +66,13 @@ export default function AboutSection({ photoUrl, onOpenUploadModal }) {
           </motion.div>
 
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="font-cinzel text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight uppercase"
           >
-            <span className="gold-gradient-text">THE PERSON BEHIND </span>
+            <span className="gold-gradient-text text-[#F0CF85]">THE PERSON BEHIND </span>
             <span className="text-[#FFFFFF]">THE CODE</span>
           </motion.h2>
 
@@ -89,10 +89,9 @@ export default function AboutSection({ photoUrl, onOpenUploadModal }) {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           {/* Left Column: 3D Editorial Photo Showcase */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
             className="lg:col-span-5 flex justify-center"
           >
             <div className="relative w-full max-w-sm sm:max-w-md">
@@ -157,10 +156,10 @@ export default function AboutSection({ photoUrl, onOpenUploadModal }) {
           {/* Right Column: Narrative, Interests & Philosophy */}
           <div className="lg:col-span-7 flex flex-col justify-center">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 1, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
+              transition={{ duration: 0.6 }}
               className="mb-6"
             >
               <h3 className="font-cinzel text-2xl sm:text-3xl font-bold text-[#FFFFFF] mb-4">
@@ -190,10 +189,10 @@ export default function AboutSection({ photoUrl, onOpenUploadModal }) {
                   return (
                     <motion.div
                       key={item.title}
-                      initial={{ opacity: 0, y: 15 }}
+                      initial={{ opacity: 1, y: 10 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
-                      transition={{ delay: idx * 0.1, duration: 0.5 }}
+                      transition={{ delay: idx * 0.05, duration: 0.4 }}
                       onMouseEnter={() => soundManager.playHover()}
                       className="p-3.5 rounded-xl mafia-glass border border-[#C6A15B]/15 hover:border-[#C6A15B]/40 transition-all group"
                     >
@@ -216,7 +215,7 @@ export default function AboutSection({ photoUrl, onOpenUploadModal }) {
 
             {/* Cinematic Philosophy Quote */}
             <motion.div
-              initial={{ opacity: 0, y: 15 }}
+              initial={{ opacity: 1, y: 10 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="p-4 rounded-xl bg-gradient-to-r from-[#5C071B]/20 via-[#141418] to-[#141418] border-l-4 border-[#C6A15B] flex items-start gap-3"

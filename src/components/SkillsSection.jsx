@@ -145,7 +145,7 @@ export default function SkillsSection() {
         {/* Section Header */}
         <div className="text-center mb-14">
           <motion.div
-            initial={{ opacity: 0, y: 15 }}
+            initial={{ opacity: 1, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#141418] border border-[#C6A15B]/30 mb-3"
@@ -157,25 +157,19 @@ export default function SkillsSection() {
           </motion.div>
 
           <motion.h2
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 1, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
             className="font-cinzel text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight uppercase"
           >
-            <span className="gold-gradient-text">MY TECHNICAL </span>
+            <span className="gold-gradient-text text-[#F0CF85]">MY TECHNICAL </span>
             <span className="text-[#FFFFFF]">ARSENAL</span>
           </motion.h2>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="text-sm sm:text-base text-[#A3A3A3] max-w-2xl mx-auto mt-3"
-          >
+          <p className="text-sm sm:text-base text-[#A3A3A3] max-w-2xl mx-auto mt-3">
             Precision-engineered tools across systems programming, modern languages, and the complete MERN development stack.
-          </motion.p>
+          </p>
 
           <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-[#C6A15B] to-transparent mx-auto mt-4" />
         </div>
@@ -215,10 +209,10 @@ export default function SkillsSection() {
               <motion.div
                 layout
                 key={skill.name}
-                initial={{ opacity: 0, y: 25 }}
+                initial={{ opacity: 1, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
+                transition={{ duration: 0.4, delay: index * 0.03 }}
                 onMouseEnter={() => soundManager.playHover()}
                 className="group relative rounded-2xl mafia-glass-card p-6 border border-[#C6A15B]/15 hover:border-[#C6A15B]/50 transition-all duration-300 hover:-translate-y-1"
               >

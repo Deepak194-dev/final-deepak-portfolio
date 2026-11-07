@@ -10,16 +10,14 @@ export default function Preloader({ onComplete }) {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(timer);
-          setTimeout(() => {
-            setIsFinished(true);
-            setTimeout(() => onComplete?.(), 800);
-          }, 400);
+          setIsFinished(true);
+          onComplete?.();
           return 100;
         }
-        const diff = Math.floor(Math.random() * 15) + 5;
+        const diff = Math.floor(Math.random() * 25) + 15;
         return Math.min(prev + diff, 100);
       });
-    }, 60);
+    }, 40);
 
     return () => clearInterval(timer);
   }, [onComplete]);
